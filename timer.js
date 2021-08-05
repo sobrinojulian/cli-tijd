@@ -1,4 +1,4 @@
-const Player = require('play-sound')
+const { exec } = require('child_process')
 
 const SECOND = 1000
 const MINUTE = SECOND * 60
@@ -6,12 +6,14 @@ const HOUR = MINUTE * 60
 const BEEP = 'beepbeep.mp3'
 
 const playBeep = () => {
-  Player().play(BEEP, err => {
-    if (err) console.log('Error: Unable to play audio')
-  })
+  const player = 'mpg123'
+  const flags = '-q'
+  const path = `${__dirname}/${BEEP}`
+  const cmd = `${player} ${flags} ${path}`
+  exec(cmd)
 }
 
-const getTimeRemaining = end => {
+const getTimeRemaining = (end) => {
   const now = Date.parse(new Date())
   const left = end - now
 
@@ -23,11 +25,11 @@ const getTimeRemaining = end => {
     total: left,
     hours: hours,
     minutes: minutes,
-    seconds: seconds
+    seconds: seconds,
   }
 }
 
-const printClock = left => {
+const printClock = (left) => {
   const hours = `${left.hours}`.padStart(2, '0')
   const minutes = `${left.minutes}`.padStart(2, '0')
   const seconds = `${left.seconds}`.padStart(2, '0')
@@ -39,7 +41,7 @@ const printClock = left => {
   process.stdout.write(clock)
 }
 
-const beginTimer = delta => {
+const beginTimer = (delta) => {
   const now = Date.parse(new Date())
   const end = new Date(now + delta)
 
