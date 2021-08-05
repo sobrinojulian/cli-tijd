@@ -10,19 +10,19 @@ const convertToMilliseconds = (ss, mm, hh) => {
   return ms
 }
 
-const isValidFormat = str => {
+const isValidFormat = (str) => {
   const re = /^[0-9]+(?::[0-9]+){0,2}$/
   return re.test(str)
 }
 
-const parseValidFormat = str => {
+const parseValidFormat = (str) => {
   const arrStr = str.split(':').reverse()
-  const arrInt = arrStr.map(x => Number.parseInt(x))
+  const arrInt = arrStr.map((x) => Number.parseInt(x))
   const [ss, mm, hh] = arrInt
   return convertToMilliseconds(ss, mm, hh)
 }
 
-const parseToMilliseconds = str => {
+const parseToMilliseconds = (str) => {
   if (!isValidFormat(str)) {
     throw '<timer>: HH:MM:SS or MM:SS or SS'
   }

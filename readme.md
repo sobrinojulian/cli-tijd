@@ -1,4 +1,4 @@
-# cli-tijd
+# timer
 
 > ⌚️ Command-line timer
 
@@ -6,38 +6,34 @@
 ## Install
 
 ```
-$ npm install --global cli-tijd
+$ yay -S mpg123
+$ npm install --global https://github.com/sobrinojulian/timer
 ```
 
 
 ## Usage
 
 ```
-$ t --help
+$ timer --help
 
   ⌚️ Command-line timer
 
   Usage
-    $ t <timer>
+    $ timer <timer>
 
   Commands
     <timer> FORMAT: HH:MM:SS or MM:SS or SS.
                     HH, MM, SS might be any integer
 
   Examples
-    $ t 22
+    $ timer 22
     00:00:22
-    $ t 12:22
+    $ timer 12:22
     00:12:22
-    $ t 1:0:0
+    $ timer 1:0:0
     01:00:00
-    $ t 00:05:22
+    $ timer 00:05:22
     00:05:22
-    $ t 22
+    $ timer 22
     00:00:22
 ```
-
-
-## License
-
-MIT © [Sobrino Julian](sobrinojulian.github.io)
