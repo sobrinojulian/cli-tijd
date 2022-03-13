@@ -7,7 +7,7 @@
 
 ```
 $ yay -S mpg123
-$ npm install --global https://github.com/sobrinojulian/timer
+$ npm install --global https://github.com/sobrinojulian/timer-cli
 ```
 
 
