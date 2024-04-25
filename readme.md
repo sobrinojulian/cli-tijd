@@ -6,6 +6,7 @@
 ## Install
 
 ```
+$ yay -S --needed libpulse # if WSL
 $ yay -S mpg123
 $ npm install --global https://github.com/sobrinojulian/timer-cli
 ```

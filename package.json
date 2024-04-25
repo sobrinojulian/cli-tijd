@@ -1,9 +1,13 @@
 {
   "private": true,
   "name": "timer",
-  "version": "1.0.1",
-  "bin": "cli.js",
+  "version": "1.0.2",
+  "bin": "main.js",
   "scripts": {
-    "start": "node cli.js"
-  }
+    "start": "node main.js"
+  },
+  "files": [
+    "main.js",
+    "beepbeep.mp3"
+  ]
 }
